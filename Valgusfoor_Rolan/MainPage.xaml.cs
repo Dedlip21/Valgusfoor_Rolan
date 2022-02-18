@@ -36,14 +36,38 @@ namespace Valgusfoor_Rolan
             };
             Valgusfoor_btn.Clicked += Valgusfoor_btn_Clicked;
 
+            Button Rgb_btn = new Button()
+            {
+                Text = "Rgb line",
+                BackgroundColor = Color.LightGreen,
+            };
+            Rgb_btn.Clicked += Rgb_btn_Clicked;
+
+            Button Trips_btn = new Button()
+            {
+                Text = "Trip traps trull",
+                BackgroundColor = Color.LightGreen,
+            };
+            Trips_btn.Clicked += Trips_btn_Clicked;
+
             StackLayout st = new StackLayout()
             {
-                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn }
+                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn }
             };
 
             st.BackgroundColor = Color.LightBlue;
             Content = st;
 
+        }
+
+        private async void Trips_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new TripsTrapsTrull()));
+        }
+
+        private async void Rgb_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Rgb()));
         }
 
         private async void Ent_btn_Clicked(object sender, EventArgs e)
