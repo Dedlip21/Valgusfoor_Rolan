@@ -50,14 +50,26 @@ namespace Valgusfoor_Rolan
             };
             Trips_btn.Clicked += Trips_btn_Clicked;
 
+            Button Ajaplaan_btn = new Button()
+            {
+                Text = "Ajaplaan",
+                BackgroundColor = Color.LightGreen,
+            };
+            Ajaplaan_btn.Clicked += Ajaplaan_btn_Clicked;
+
             StackLayout st = new StackLayout()
             {
-                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn }
+                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn, Ajaplaan_btn }
             };
 
             st.BackgroundColor = Color.LightBlue;
             Content = st;
 
+        }
+
+        private async void Ajaplaan_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Ajaplaan()));
         }
 
         private async void Trips_btn_Clicked(object sender, EventArgs e)
