@@ -57,14 +57,38 @@ namespace Valgusfoor_Rolan
             };
             Ajaplaan_btn.Clicked += Ajaplaan_btn_Clicked;
 
+            Button Horoskop_btn = new Button()
+            {
+                Text = "Horoskop",
+                BackgroundColor = Color.LightGreen,
+            };
+            Horoskop_btn.Clicked += Horoskop_btn_Clicked;
+
+            Button Maakonnad_btn = new Button()
+            {
+                Text = "Maakonnad",
+                BackgroundColor = Color.LightGreen,
+            };
+            Maakonnad_btn.Clicked += Maakonnad_btn_Clicked;
+
             StackLayout st = new StackLayout()
             {
-                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn, Ajaplaan_btn }
+                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn, Ajaplaan_btn, Horoskop_btn, Maakonnad_btn }
             };
 
             st.BackgroundColor = Color.LightBlue;
             Content = st;
 
+        }
+
+        private async void Maakonnad_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Maakonnad()));
+        }
+
+        private async void Horoskop_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Horoskop()));
         }
 
         private async void Ajaplaan_btn_Clicked(object sender, EventArgs e)
