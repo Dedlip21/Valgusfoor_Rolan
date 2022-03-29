@@ -1,0 +1,16 @@
+﻿Rebuild started...
+1>------ Rebuild All started: Project: Valgusfoor_Rolan, Configuration: Debug Any CPU ------
+Restored C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Valgusfoor_Rolan.csproj (in 54 ms).
+Restored C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan.Android\Valgusfoor_Rolan.Android.csproj (in 69 ms).
+1>C:\Users\opilane\.nuget\packages\xamarin.forms\4.6.0.1141\buildTransitive\Xamarin.Forms.targets(227,5): warning : Xamarin.Forms recommends TargetPlatformMinVersion >= 10.0.14393.0 (current project is -1)
+1>C:\Users\opilane\.nuget\packages\xamarin.forms\4.6.0.1141\buildTransitive\Xamarin.Forms.targets(233,5): warning : Xamarin.Forms recommends TargetPlatformVersion >= 10.0.17763.0 (current project is -1)
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Rgb.xaml.cs(93,28,93,43): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Clicker.xaml.cs(94,53,94,55): warning CS0168: The variable 'ex' is declared but never used
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Clicker.xaml.cs(98,34,98,36): warning CS0168: The variable 'ex' is declared but never used
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Valgusfoor.xaml.cs(16,24,16,27): warning CS0169: The field 'Valgusfoor.gr3' is never used
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Valgusfoor.xaml.cs(16,19,16,22): warning CS0169: The field 'Valgusfoor.gr2' is never used
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Valgusfoor.xaml.cs(16,14,16,17): warning CS0169: The field 'Valgusfoor.gr1' is never used
+1>C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\Entry.xaml.cs(48,13,48,14): warning CS0414: The field 'Entry.a' is assigned but its value is never used
+1>Valgusfoor_Rolan -> C:\Users\opilane\source\repos\TARpv20 Rolan Maslennikov\Valgusfoor_Rolan\Valgusfoor_Rolan\bin\Debug\netstandard2.0\Valgusfoor_Rolan.dll
+1>Done building project "Valgusfoor_Rolan.csproj".
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
