@@ -17,17 +17,17 @@ namespace Valgusfoor_Rolan
         Label label;
         public Horoskop()
         {
-            Image image = new Image()
+            image = new Image()
             {
                 Source = "none.png"
             };
-            DatePicker DPicker = new DatePicker()
+            DPicker = new DatePicker()
             {
 
             };
             DPicker.DateSelected += DPicker_DateSelected;
 
-            Label label = new Label()
+            label = new Label()
             {
                 Text = "По гороскопу ты..."
             };
@@ -50,6 +50,12 @@ namespace Valgusfoor_Rolan
             if (m == 1 && d>=1 && d<=20 || m==12 && d>=22)
             {
                 label.Text = "По гороскопу ты Козерог";
+                image.Source = "kozerog.jpg";
+            }
+            else if (m == 9 && d >= 21 || m == 10 && d <= 23)
+            {
+                label.Text = "По гороскопу ты Весы";
+                image.Source = "veso.jpg";
             }
         }
     }

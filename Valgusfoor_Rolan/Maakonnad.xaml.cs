@@ -20,7 +20,7 @@ namespace Valgusfoor_Rolan
         Label label;
         public Maakonnad()
         {
-            Picker Picker1 = new Picker()
+            Picker1 = new Picker()
             {
                 Title = "Уезд"
             };
@@ -29,7 +29,7 @@ namespace Valgusfoor_Rolan
 
 
 
-            Picker Picker2 = new Picker()
+            Picker2 = new Picker()
             {
                 Title = "Столица"
             };
@@ -39,12 +39,12 @@ namespace Valgusfoor_Rolan
 
 
 
-            Image image = new Image()
+            image = new Image()
             {
                 Source = "none.png"
             };
 
-            Label label = new Label()
+            label = new Label()
             {
                 Text = ": )"
             };

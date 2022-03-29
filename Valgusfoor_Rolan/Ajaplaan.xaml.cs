@@ -17,13 +17,13 @@ namespace Valgusfoor_Rolan
         TimePicker TPicker;
         public Ajaplaan()
         {
-            Label underlineLabel = new Label { Text = "This is underlined text.", TextDecorations = TextDecorations.Underline };
+            underlineLabel = new Label { Text = "This is underlined text.", TextDecorations = TextDecorations.Underline };
 
-            Image image = new Image { Source = "night1.jpg" };
+            image = new Image { Source = "night1.jpg" };
 
 
 
-            TimePicker TPicker = new TimePicker
+            TPicker = new TimePicker
             {
                 Time = new TimeSpan(00, 00, 00) // Time set to "00:00:00"
             };
