@@ -40,6 +40,7 @@ namespace Valgusfoor_Rolan
 
         private void TPicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
+            underlineLabel.TextColor = Color.Black;
             if (e.PropertyName == TimePicker.TimeProperty.PropertyName)
             {
                 int time = TPicker.Time.Hours;
