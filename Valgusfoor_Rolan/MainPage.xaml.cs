@@ -85,14 +85,27 @@ namespace Valgusfoor_Rolan
             };
             Table_Page_btn.Clicked += Table_Page_btn_Clicked;
 
+            Button ListView_Page_btn = new Button()
+            {
+                Text = "ListView",
+                BackgroundColor = Color.LightGreen,
+            };
+            ListView_Page_btn.Clicked += ListView_Page_btn_Clicked;
+
             StackLayout st = new StackLayout()
             {
-                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn, Ajaplaan_btn, Horoskop_btn, Maakonnad_btn, Picker_Page_btn, Table_Page_btn }
+                Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn, Ajaplaan_btn,
+                    Horoskop_btn, Maakonnad_btn, Picker_Page_btn, Table_Page_btn, ListView_Page_btn }
             };
 
             st.BackgroundColor = Color.LightBlue;
             Content = st;
 
+        }
+
+        private async void ListView_Page_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new ListView_Page()));
         }
 
         private async void Table_Page_btn_Clicked(object sender, EventArgs e)

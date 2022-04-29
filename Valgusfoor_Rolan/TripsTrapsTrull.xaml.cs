@@ -323,7 +323,7 @@ namespace Valgusfoor_Rolan
             }
             /*else
             {
-                tulemus = -3;
+                tulemus = -3;ˇˇ                                                                                                                                                                                                                                                                                                                                                                                                                             
             }*/
             return tulemus;
         }
