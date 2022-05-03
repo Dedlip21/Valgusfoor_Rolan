@@ -87,7 +87,7 @@ namespace Valgusfoor_Rolan
             Telefon selectedPhone = e.Item as Telefon;
             if (selectedPhone != null)
             {
-                await DisplayAlert("Выбранная модель", $"{selectedPhone.Tootja} - {selectedPhone.Nimetus}");
+                await DisplayAlert("Выбранная модель", $"{selectedPhone.Tootja} - {selectedPhone.Nimetus}", "OK");
             }
         }
     }

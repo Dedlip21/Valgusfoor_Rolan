@@ -8427,70 +8427,76 @@ namespace Valgusfoor_Rolan.Droid
 			public const int ryby = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int skorpion = 2131165324;
+			public const int saksamaa = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int strelec = 2131165325;
+			public const int skorpion = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int sun1 = 2131165326;
+			public const int strelec = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int sun2 = 2131165327;
+			public const int sun1 = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int sun3 = 2131165328;
+			public const int sun2 = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int sunrise = 2131165329;
+			public const int sun3 = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int sunrise2 = 2131165330;
+			public const int sunrise = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int sunrise3 = 2131165331;
+			public const int sunrise2 = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int sunset1 = 2131165332;
+			public const int sunrise3 = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int sunset2 = 2131165333;
+			public const int sunset1 = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int sunset3 = 2131165334;
+			public const int sunset2 = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int tallinn = 2131165335;
+			public const int sunset3 = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int Tartu = 2131165336;
+			public const int tallinn = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int telec = 2131165337;
+			public const int Tartu = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int tooltip_frame_dark = 2131165338;
+			public const int telec = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int tooltip_frame_light = 2131165339;
+			public const int tooltip_frame_dark = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int ttt = 2131165340;
+			public const int tooltip_frame_light = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int valga = 2131165341;
+			public const int ttt = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int veso = 2131165342;
+			public const int ukraina = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int viljandi = 2131165343;
+			public const int valga = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int vodolei = 2131165344;
+			public const int veso = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int vyru = 2131165345;
+			public const int viljandi = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int vodolei = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int vyru = 2131165347;
 			
 			static Drawable()
 			{

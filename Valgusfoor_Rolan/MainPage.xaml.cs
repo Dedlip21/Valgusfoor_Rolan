@@ -92,15 +92,27 @@ namespace Valgusfoor_Rolan
             };
             ListView_Page_btn.Clicked += ListView_Page_btn_Clicked;
 
+            Button Euroopa_riigid_btn = new Button()
+            {
+                Text = "Euroopa riigid",
+                BackgroundColor = Color.LightGreen,
+            };
+            Euroopa_riigid_btn.Clicked += Euroopa_riigid_btn_Clicked;
+
             StackLayout st = new StackLayout()
             {
                 Children = { Ent_btn, Cliker_btn, Valgusfoor_btn, Rgb_btn, Trips_btn, Ajaplaan_btn,
-                    Horoskop_btn, Maakonnad_btn, Picker_Page_btn, Table_Page_btn, ListView_Page_btn }
+                    Horoskop_btn, Maakonnad_btn, Picker_Page_btn, Table_Page_btn, ListView_Page_btn, Euroopa_riigid_btn }
             };
 
             st.BackgroundColor = Color.LightBlue;
             Content = st;
 
+        }
+
+        private async void Euroopa_riigid_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Euroopa_riigid()));
         }
 
         private async void ListView_Page_btn_Clicked(object sender, EventArgs e)

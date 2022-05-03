@@ -33,7 +33,7 @@ namespace Valgusfoor_Rolan
         public Table_Page()
         {
             //Var 1
-             tel = new EntryCell
+            tel = new EntryCell
             {
                 Label = "Telefon:",
                 Placeholder = "Sisesta tel. number",
