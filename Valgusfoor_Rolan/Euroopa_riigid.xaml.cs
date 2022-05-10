@@ -14,7 +14,11 @@ namespace Valgusfoor_Rolan
     public partial class Euroopa_riigid : ContentPage
     {
         public ObservableCollection<Riigid> riigid { get; set; }
+
         Label lbl_list;
+        Label lbl_kustutamine;
+        Label lbl_muuda;
+
         ListView list;
 
         TableView tableView;
@@ -24,15 +28,25 @@ namespace Valgusfoor_Rolan
         EntryCell rahvaarv;
         EntryCell lipp;
 
+        Switch sw;
+        Switch sw2;
+
+        Uri img;
+        bool b;
+        bool m;
+
         public Euroopa_riigid()
         {
-            
-            //InitializeComponent();
+            b = false;
+
+            //img = new Uri("https://aka.ms/campus.jpg");
 
             riigid = new ObservableCollection<Riigid>
             {
+
                 new Riigid {Nimetus="Ukraina", Pealinn = "Kiev", Rahvaarv ="44130000", Lipp="ukraina.jpg"},
                 new Riigid {Nimetus="Saksamaa", Pealinn = "Berlin", Rahvaarv ="83240000", Lipp="saksamaa.png"},
+                new Riigid {Nimetus="Saksamaa", Pealinn = "Berlin", Rahvaarv ="83240000", Lipp="https://maslennikov20.thkit.ee/htdocs/image/Spain.jpg"},
             };
 
             lbl_list = new Label
@@ -40,6 +54,18 @@ namespace Valgusfoor_Rolan
                 Text = "Riigid",
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
+            };
+
+            lbl_kustutamine = new Label
+            {
+                Text = "Kustutamine: Off",
+                HorizontalOptions = LayoutOptions.Start,
+            };
+
+            lbl_muuda = new Label
+            {
+                Text = "Muutmine: Off",
+                HorizontalOptions = LayoutOptions.Start,
             };
 
             list = new ListView
@@ -110,8 +136,8 @@ namespace Valgusfoor_Rolan
             lipp = new EntryCell
             {
                 Label = "Lipp:",
-                Placeholder = "Sisesta lipp pildi",
-                Keyboard = Keyboard.Url
+                Placeholder = "Sisesta lipp kujutise address",
+                Keyboard = Keyboard.Url,
 
             };
 
@@ -126,7 +152,7 @@ namespace Valgusfoor_Rolan
                         nimetus, 
                         pealinn,
                         rahvaarv,
-                        lipp
+                        lipp,
                     },
                 },
             };
@@ -139,28 +165,137 @@ namespace Valgusfoor_Rolan
             };
             lisa.Clicked += Lisa_Clicked;
 
+            Button muuda = new Button
+            {
+                Text = "Muuda riik"
+            };
+            muuda.Clicked += Muuda_Clicked;
 
-            this.Content = new StackLayout { Children = { lbl_list, list, tableView, lisa } };
+            sw = new Switch
+            {
+                IsToggled = false,
+                OnColor = Color.Orange,
+                ThumbColor = Color.Green,
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+            };
+            sw.Toggled += Sw_Toggled;
+
+            sw2 = new Switch
+            {
+                IsToggled = false,
+                OnColor = Color.Orange,
+                ThumbColor = Color.Green,
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+            };
+            sw2.Toggled += Sw2_Toggled;
+
+
+
+            this.Content = new StackLayout { Children = { lbl_list, lbl_kustutamine, sw, lbl_muuda, sw2, list, tableView, lisa, muuda} };
+        }
+
+        private async void Muuda_Clicked(object sender, EventArgs e)
+        {
+            Riigid riik = list.SelectedItem as Riigid;
+            if (m == true)
+            {
+                await Navigation.PushAsync(new Euroopa_muuta());
+            }
+            else if (m == false)
+            {
+                await DisplayAlert("Muutmise viga", "Muutmisnupp pole lubatud", "OK");
+            }
+        }
+
+        private void Sw2_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (sw2.IsToggled == false)
+            {
+                m = false;
+                lbl_muuda.Text = "Muutmine: Off";
+            }
+
+            if (sw2.IsToggled == true)
+            {
+                m = true;
+                lbl_muuda.Text = "Muutmine: On";
+            }
+        }
+
+        private async void Sw_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (sw.IsToggled == true)
+            {
+                b = true;
+                lbl_kustutamine.Text = "Kustutamine: On";
+            }
+
+            if (sw.IsToggled == false)
+            {
+                b = false;
+                lbl_kustutamine.Text = "Kustutamine: Off";
+            }
         }
 
         private async void Lisa_Clicked(object sender, EventArgs e)
         {
-            if (nimetus.Text == null || pealinn.Text == null || rahvaarv.Text == null)
+            /*if (nimetus.Text == null || pealinn.Text == null || rahvaarv.Text == null)
             {
                 await DisplayAlert("Viga", "Sisesta väärtused", "OK");
             }
             else
             {
                 riigid.Add(new Riigid { Nimetus = nimetus.Text, Pealinn = pealinn.Text, Rahvaarv = rahvaarv.Text, Lipp = lipp.Text });
+            }*/
+
+            if (m == false)
+            {
+                if (nimetus.Text == null || pealinn.Text == null || rahvaarv.Text == null)
+                {
+                    await DisplayAlert("Viga", "Sisesta väärtused", "OK");
+                }
+                else
+                {
+                    riigid.Add(new Riigid { Nimetus = nimetus.Text, Pealinn = pealinn.Text, Rahvaarv = rahvaarv.Text, Lipp = lipp.Text });
+                }
             }
+            else if(m == true)
+            {
+                await DisplayAlert("Viga", "Lülitage muutmisrežiim välja", "OK");
+            }
+
         }
 
         private async void List_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Riigid selectedRiik = e.Item as Riigid;
-            if (selectedRiik != null)
+            Riigid selectedRiik = e.Item as Riigid;    
+            if (b == false && m == false)
             {
-                await DisplayAlert("Valitud riik", $"{selectedRiik.Nimetus} - {selectedRiik.Pealinn}", "OK");
+                if (selectedRiik != null)
+                {
+                    await DisplayAlert("Valitud riik", $"{selectedRiik.Nimetus} - {selectedRiik.Pealinn}", "OK");
+                }
+            }
+
+            Riigid riik = list.SelectedItem as Riigid;
+            if (b == true && m == false)
+            {
+
+                if(riik != null)
+                {
+                    riigid.Remove(riik);
+                    list.SelectedItem = null;
+                }
+            }
+
+            if(m == true && b == false)
+            {
+                if (selectedRiik != null)
+                {
+
+                }
             }
         }
     }

@@ -13,5 +13,7 @@ namespace Valgusfoor_Rolan
         public string Rahvaarv { get; set; }
 
         public string Lipp { get; set; }
+
+        public bool IsToggled { get; set; }
     }
 }
